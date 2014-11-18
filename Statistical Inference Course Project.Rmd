@@ -63,4 +63,7 @@ q
 par(mfrow = c(1,1))
 qqnorm(simulatedExponentialMeans)
 qqline(simulatedExponentialMeans, col = 2)
+
+#Calculate the 95% Confidence Interval of the simulated sample means
+meanOfSimExpMeans + c(-1,1) * qt (0.975, 40) * sd (simulatedExponentialMeans)
 ```

@@ -1,6 +1,6 @@
 ---
 title: "Statistical Inference - Course Project"
-output: html_document
+output: pdf_document
 ---
 
 ## Introduction 
@@ -26,7 +26,8 @@ simulatedExpValues = replicate(nosims, rexp (n, expLambda))
 #Calculate the individual means of the simulated exponential simulations
 simulatedExponentialMeans = colMeans (simulatedExpValues)
 
-#Calculate the mean of the sinulated means. This tells us where the simulation means are centered.
+#Calculate the mean of the sinulated means. 
+#This tells us where the simulation means are centered.
 meanOfSimExpMeans = mean(simulatedExponentialMeans)
 meanOfSimExpMeans
 
@@ -57,7 +58,11 @@ Show that the distribution is approximately normal. From the plots below, it is 
 ```{r}
 library (ggplot2)
 par(mfrow = c(1,1))
-q <- ggplot(data.frame(simulatedExponentialMeans), aes(x = simulatedExponentialMeans)) + geom_histogram(alpha = 0.2, binwidth=0.3, colour = "black", aes(y = ..density..)) + geom_density()
+distributionCurve <- ggplot(data.frame(simulatedExponentialMeans), 
+                            aes(x = simulatedExponentialMeans)) + 
+                            geom_histogram (alpha = 0.2, binwidth=0.3, colour = "black", 
+                                            aes(y = ..density..)) + 
+                            geom_density()
 q
 
 par(mfrow = c(1,1))

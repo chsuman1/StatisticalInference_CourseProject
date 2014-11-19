@@ -1,5 +1,5 @@
 ---
-title: "Statistical Inference - Course Project"
+title: "Statistical Inference - Course Project - Part 1"
 output: html_document
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Statistical Inference - Course Project - Part 1"
-output: html_document
+output: pdf_document
 ---
 
 ## Introduction 
@@ -63,7 +63,7 @@ distributionCurve <- ggplot(data.frame(simulatedExponentialMeans),
                             geom_histogram (alpha = 0.2, binwidth=0.3, colour = "black", 
                                             aes(y = ..density..)) + 
                             geom_density()
-q
+distributionCurve
 
 par(mfrow = c(1,1))
 qqnorm(simulatedExponentialMeans)
